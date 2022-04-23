@@ -6,6 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "vegetables")
 public class Vegetable {
@@ -18,49 +25,49 @@ public class Vegetable {
 	private long quantity;
 	private String fridge;
 	
-	public Vegetable() {}
-	public Vegetable(int id, String name, long price, long quantity, String fridge) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.quantity = quantity;
-		this.fridge = fridge;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public long getPrice() {
-		return price;
-	}
-	public void setPrice(long price) {
-		this.price = price;
-	}
-	public long getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(long quantity) {
-		this.quantity = quantity;
-	}
-	public String getFridge() {
-		return fridge;
-	}
-	public void setFridge(String fridge) {
-		this.fridge = fridge;
-	}
-	
-	@Override
-	public String toString() {
-		return "Vegetable [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + ", fridge="
-				+ fridge + "]";
-	}
+//	public Vegetable() {}
+//	public Vegetable(int id, String name, long price, long quantity, String fridge) {
+//		super();
+//		this.id = id;
+//		this.name = name;
+//		this.price = price;
+//		this.quantity = quantity;
+//		this.fridge = fridge;
+//	}
+//	public int getId() {
+//		return id;
+//	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
+//	public String getName() {
+//		return name;
+//	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//	public long getPrice() {
+//		return price;
+//	}
+//	public void setPrice(long price) {
+//		this.price = price;
+//	}
+//	public long getQuantity() {
+//		return quantity;
+//	}
+//	public void setQuantity(long quantity) {
+//		this.quantity = quantity;
+//	}
+//	public String getFridge() {
+//		return fridge;
+//	}
+//	public void setFridge(String fridge) {
+//		this.fridge = fridge;
+//	}
+//	
+//	@Override
+//	public String toString() {
+//		return "Vegetable [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity + ", fridge="
+//				+ fridge + "]";
+//	}
 }

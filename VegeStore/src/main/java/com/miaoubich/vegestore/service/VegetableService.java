@@ -17,15 +17,17 @@ public class VegetableService {
 	public Vegetable upsertVege(Vegetable vegetable) {
 
 		if (vegetable.getName().isEmpty() || vegetable.getFridge().isEmpty())
-			throw new EmptyFieldsException(HttpStatus.BAD_REQUEST, "Fields are Mandatory!");
+			throw new EmptyFieldsException();
+		if(vegetable.getPrice() < 1 || vegetable.getQuantity() < 1)
+			throw new IllegalArgumentException();
 
 		Vegetable existVege = vegeRepository.findById(vegetable.getId()).orElse(null);
-		if(existVege != null) {
+		if (existVege != null) {
 			existVege.setName(vegetable.getName());
 			existVege.setQuantity(vegetable.getQuantity());
 			existVege.setPrice(vegetable.getPrice());
 			existVege.setFridge(vegetable.getFridge());
-			
+
 			return vegeRepository.save(existVege);
 		}
 		System.out.println("Vegetable: " + vegetable);
